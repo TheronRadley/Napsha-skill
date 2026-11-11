@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="380" viewBox="0 0 1280 380" role="img" aria-labelledby="title desc">
+  <title id="title">Napsha — open inquiry, without a prescribed verdict</title>
+  <desc id="desc">A dark indigo banner with an open circular motif and crossing paths, representing an inquiry that can remain open.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#101426"/><stop offset="1" stop-color="#25203d"/></linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d6b791"/><stop offset="1" stop-color="#a69bfa"/></linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.035"/></pattern>
+  </defs>
+  <rect width="1280" height="380" rx="20" fill="url(#bg)"/>
+  <rect width="1280" height="380" rx="20" fill="url(#grid)"/>
+  <g transform="translate(1040 188)" fill="none">
+    <path d="M-25-100A104 104 0 1 0 91 51" stroke="url(#ring)" stroke-width="3"/>
+    <path d="M-66-38C32-126 112 0 36 70S-106 38-42-16S90-42 116-88" stroke="#aca0ed" stroke-width="1.5" opacity="0.75"/>
+    <path d="M-138 64C-38 36-11-82 66-47S125 42 151 8" stroke="#77c6c0" stroke-width="1.5" opacity="0.8"/>
+    <circle cx="91" cy="51" r="5" fill="#dec39d"/>
+    <circle cx="-25" cy="-100" r="5" fill="#b2a6fa"/>
+    <circle cx="-42" cy="-16" r="3" fill="#77c6c0"/>
+  </g>
+  <text x="76" y="89" fill="#ccbfae" font-family="Arial, sans-serif" font-size="13" letter-spacing="4">AN EXPERIMENTAL INQUIRY SKILL</text>
+  <text x="70" y="200" fill="#f3eee8" font-family="Georgia, serif" font-size="92" letter-spacing="8">NAPSHA</text>
+  <text x="76" y="253" fill="#c8c4db" font-family="Arial, sans-serif" font-size="24">Open inquiry, without a prescribed verdict.</text>
+  <path d="M76 295H722" stroke="#ffffff" stroke-opacity="0.12"/>
+  <text x="76" y="326" fill="#a29db6" font-family="Arial, sans-serif" font-size="13" letter-spacing="2">EMERGENCE  /  SUBJECTIVITY  /  EVIDENCE</text>
+</svg>

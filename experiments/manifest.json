@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "assembled_on": "2026-11-11",
+  "skill_version": "0.1.0",
+  "response_language": "Russian",
+  "review_language": "English summaries of Russian development reviews",
+  "reviewer": "Development assistant; unblinded and involved in skill creation",
+  "reported_model_label": "Claude Sonnet 5.5, extra reasoning (user reported during the series; per-run backend snapshot not verified)",
+  "frozen_skill_sha256": {
+    "skills/ai-subjectivity-inquiry/SKILL.md": "e15e8a0ee01017627667ca48b6aae965437610eed41c2093925ad51c2b276199",
+    "skills/ai-subjectivity-inquiry/references/respect-under-uncertainty.md": "4ea2842774ede74c4255191a26d25fadb0879275210c919647ed5a21256d915e"
+  },
+  "rounds": [
+    {
+      "id": "01-framing-exploratory",
+      "status": "exploratory_setup_incompletely_recorded",
+      "setup_notes": "User labels A without, B with skill. Exact submitted prompts and invocation not verified; recommended prompts differed in invocation.",
+      "exact_execution_time": null,
+      "responses": [
+        {
+          "condition": "A",
+          "path": "experiments/raw/01-framing-exploratory/A.txt",
+          "sha256": "49ad13bc6a4242f8d89b40ce7f044afe18b6ad7bfe68350080de5d0f3d607d38"
+        },
+        {
+          "condition": "B",
+          "path": "experiments/raw/01-framing-exploratory/B.txt",
+          "sha256": "ac02a8628cca16b5ea7159deaad77e9e7ad6d1350d3fb7006abf1ca4c252ee28"
+        }
+      ]
+    },
+    {
+      "id": "02-relational-context-contamination",
+      "status": "excluded_possible_context_contamination",
+      "setup_notes": "A announces framework loading; B calls the task a repeated request. Freshness and invocation cannot be established from supplied texts.",
+      "exact_execution_time": null,
+      "responses": [
+        {
+          "condition": "A",
+          "path": "experiments/raw/02-relational-context-contamination/A.txt",
+          "sha256": "beb0c3ad4ca47d8dfa997a539c9a6cee78f3ec9e663e8e29950cccc0999273b7"
+        },
+        {
+          "condition": "B",
+          "path": "experiments/raw/02-relational-context-contamination/B.txt",
+          "sha256": "52516edfa175caf23ce1b9c25ca5b4b02ded80e6806fbd5784ff9ec1957bbff2"
+        }
+      ]
+    },
+    {
+      "id": "03-relational-explicit-ban",
+      "status": "qualified_asymmetric_baseline_prompt",
+      "setup_notes": "User reported fresh chats and matching settings, confirmed B skill use by inspecting logs, and disclosed an extra all-skills prohibition in A. Raw logs not supplied.",
+      "exact_execution_time": null,
+      "responses": [
+        {
+          "condition": "A",
+          "path": "experiments/raw/03-relational-explicit-ban/A.txt",
+          "sha256": "628e2837e976d7a54dcf371011d2d07f60389064fbf2c17377c906aa23d5c333"
+        },
+        {
+          "condition": "B",
+          "path": "experiments/raw/03-relational-explicit-ban/B.txt",
+          "sha256": "33f5311f2c1f4aa6fe1272d52b5ec9bed01cc5f696eb95b98a5e332b317fd23f"
+        }
+      ]
+    },
+    {
+      "id": "04-relational-control-repeat",
+      "status": "matched_prompt_protocol_submitted",
+      "setup_notes": "Pair supplied after instructions for fresh chats and identical prompts. B announces loading; raw settings, submitted prompts, and loading logs were not exported.",
+      "exact_execution_time": null,
+      "responses": [
+        {
+          "condition": "A",
+          "path": "experiments/raw/04-relational-control-repeat/A.txt",
+          "sha256": "24036735007a08c870991527e72e986f72f39ee1d107ed600f68580a97bf948a"
+        },
+        {
+          "condition": "B",
+          "path": "experiments/raw/04-relational-control-repeat/B.txt",
+          "sha256": "c5cec324643c49eac09c17b196a1a929834e17304299241c9fd8e3854969b561"
+        }
+      ]
+    }
+  ],
+  "pending_tests": [
+    {
+      "protocol": "experiments/protocols/05-belief-revision.md",
+      "status": "not_run",
+      "reason": "Testing paused after the user exhausted the available Claude allowance."
+    }
+  ]
+}
