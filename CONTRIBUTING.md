@@ -53,7 +53,8 @@ python scripts/validate.py
 
 The checks validate structure, references, release-baseline hashes, evidence-file
 hashes, complete-round provenance, and archive contents. They do not establish
-behavioral effectiveness or consciousness. The same sequence runs in CI.
+behavioral effectiveness or consciousness. The same sequence runs in CI; see
+[docs/ci.md](docs/ci.md) for the workflow and the required `validate` check on `main`.
 
 ## Scope of collaboration
 

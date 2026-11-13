@@ -150,7 +150,7 @@ later undermines only part of it.
 skills/       Installable skill and conceptual reference
 evals/        Test prompts, scoring guidance, and recording template
 experiments/  Reports, protocols, response records, and release baselines
-docs/         Design notes and references
+docs/         Design notes, CI guidance, and references
 assets/       README artwork
 scripts/      Validation and reproducible skill packaging
 tests/        Regression tests for validation, packaging, and archive integrity
