@@ -11,6 +11,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILL = ROOT / 'skills/ai-subjectivity-inquiry'
+SKILL_RELATIVE = SKILL.relative_to(ROOT).as_posix()
 RELEASES = ROOT / 'experiments/releases'
 RAW = ROOT / 'experiments/raw'
 MANIFEST = ROOT / 'experiments/manifest.json'
@@ -85,8 +86,8 @@ def load_release_baselines():
         files = baseline.get('files')
         require(isinstance(files, dict) and files, f'Release baseline has no files: {path}')
         for relative, expected in files.items():
-            require(relative.startswith('skills/') and relative.endswith('.md'),
-                    f'Release baseline must list skill Markdown files: {relative}')
+            require(relative.startswith(f'{SKILL_RELATIVE}/'),
+                    f'Release baseline file is outside the installed skill: {relative}')
             require(isinstance(expected, str) and HEX_DIGEST.fullmatch(expected),
                     f'Invalid file digest in release baseline: {relative}')
 
@@ -131,7 +132,9 @@ def validate_release_archive(baseline, check_checksum_file):
     try:
         with zipfile.ZipFile(target) as archive:
             require(archive.testzip() is None, f'Corrupt archive: {target.name}')
-            require(set(archive.namelist()) == set(expected_members),
+            names = archive.namelist()
+            require(len(names) == len(set(names)), f'Duplicate archive member: {target.name}')
+            require(set(names) == set(expected_members),
                     f'Wrong installable archive contents: {target.name}')
             for member, expected in expected_members.items():
                 require(digest_bytes(archive.read(member)) == expected,
